@@ -2,7 +2,7 @@ import { forwardRef, ReactNode } from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
 import { cva } from "class-variance-authority";
 import { cn } from "../../utils/cn";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const firstTextVariant = {
   initial: {

@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { Button } from "../../../components/buttons/Button";
 import { Link } from "react-router-dom";
-import { latestArticles } from "../../../objects/resources/resource-list";
 import {
   collection,
   FirestoreDataConverter,

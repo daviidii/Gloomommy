@@ -1,4 +1,4 @@
-import WbContainer1 from "../../../components/containers/wave-border-container/wbContainer1";
+import WbContainer1 from "../../../components/containers/wave-border-container/WbContainer1";
 import BoxContainer from "../../../components/containers/box-container/BoxContainer";
 
 const AboutMore = () => {
