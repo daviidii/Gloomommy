@@ -30,7 +30,7 @@ const Footer = () => {
           <h2 className="text-3xl leading-none">Gloomommy</h2>
           <address className="flex flex-col gap-1.5">
             <Link to="mailto:support@gloomommy.com.ph">
-              support@gloomommy.com.ph
+              ictpgroup1@gmail.com
             </Link>
             <Link to="tel:+639061234567">+63 (906) 123 4567</Link>
           </address>
