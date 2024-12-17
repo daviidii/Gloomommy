@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "../buttons/Button";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { AnimatePresence, motion } from "motion/react";
@@ -6,8 +6,28 @@ import { menu_nav } from "../../objects/menu-nav";
 import { NavLink } from "react-router-dom";
 import HeaderFull from "./header-pc/HeaderFull";
 
-const Header: React.FC = () => {
+const Header: React.FC<{
+  isSticky: boolean;
+  setIsSticky: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ isSticky, setIsSticky }) => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const menuVariants = useMemo(() => {
     return {
@@ -75,7 +95,29 @@ const Header: React.FC = () => {
   };
   return (
     <>
-      <header className="bg-primary p-2.5 text-onPrimary">
+      <motion.header
+        initial={{ y: 0, boxShadow: "none" }}
+        animate={
+          isSticky
+            ? {
+                y: 0,
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                scale: 1.05,
+                paddingLeft: "40px",
+                paddingRight: "40px",
+              }
+            : { y: 0, boxShadow: "none", scale: 1 }
+        }
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          duration: 0.3,
+        }}
+        className={`p-2.5 bg-primary text-onPrimary w-full z-50 ${
+          isSticky ? "fixed top-0 left-0" : ""
+        }`}
+      >
         <div className="flex items-center justify-between lg:hidden">
           <div>
             <NavLink to="/" className="font-inria text-xl font-medium">
@@ -92,7 +134,7 @@ const Header: React.FC = () => {
         <nav className="hidden lg:flex lg:container items-center justify-between">
           <HeaderFull menu={menu_nav} />
         </nav>
-      </header>
+      </motion.header>
       {/* mobile nav */}
       <AnimatePresence>
         {isOpenMobileMenu && (
