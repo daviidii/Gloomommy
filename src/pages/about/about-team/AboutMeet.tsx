@@ -17,7 +17,7 @@ const AboutMeet = () => {
 
       <ul
         role="list"
-        className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-5 sm:gap-y-16 xl:col-span-full"
+        className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 sm:gap-y-16 xl:col-span-full"
       >
         {members.map((person) => (
           <li key={person.name}>

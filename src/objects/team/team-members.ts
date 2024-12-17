@@ -8,6 +8,8 @@ import tayabas from "../../assets/images/members/tayabas.jpg";
 import torres from "../../assets/images/members/torres.jpg";
 import tuesca from "../../assets/images/members/tuesca.jpg";
 import mahayag from "../../assets/images/members/mahayag.jpg";
+import virayo from "../../assets/images/members/virayo.jpg";
+import esver from "../../assets/images/members/esver.jpg";
 
 export const members = [
   { name: "Kae Arellano", photoURL: arellano },
@@ -20,4 +22,6 @@ export const members = [
   { name: "Yuna Dela Cruz", photoURL: dela_cruz },
   { name: "Ronie Rosarito", photoURL: rosarito },
   { name: "Raquel Mahayag", photoURL: mahayag },
+  { name: "Henarhy Jane Virayo", photoURL: virayo },
+  { name: "Precious Esver", photoURL: esver },
 ];

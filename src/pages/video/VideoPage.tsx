@@ -47,7 +47,7 @@ const VideoPage = () => {
     <SubpageContainer title={video.title} description={video.description}>
       <VideoPlayer
         title={video.title}
-        videoUrl="https://www.youtube.com/watch?v=01T9RIKhEQc"
+        videoUrl={video.video_url}
         description={video.description}
       />
     </SubpageContainer>
