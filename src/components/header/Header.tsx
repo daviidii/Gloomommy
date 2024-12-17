@@ -96,23 +96,21 @@ const Header: React.FC<{
   return (
     <>
       <motion.header
-        initial={{ y: 0, boxShadow: "none" }}
+        initial={{ y: 0, scale: 1, boxShadow: "none" }}
         animate={
           isSticky
             ? {
-                y: 0,
+                scale: [1, 1.03, 1],
                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                scale: 1.05,
+                background: "#7B5733",
                 paddingLeft: "40px",
                 paddingRight: "40px",
               }
-            : { y: 0, boxShadow: "none", scale: 1 }
+            : { scale: 1, boxShadow: "none", background: "#8D4A5D" }
         }
         transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 30,
-          duration: 0.3,
+          duration: 0.4,
+          ease: "easeInOut",
         }}
         className={`p-2.5 bg-primary text-onPrimary w-full z-50 ${
           isSticky ? "fixed top-0 left-0" : ""
