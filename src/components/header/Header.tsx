@@ -100,7 +100,7 @@ const Header: React.FC<{
         animate={
           isSticky
             ? {
-                scale: [1, 1.03, 1],
+                scale: [1, 1.01, 1],
                 boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
                 background: "#7B5733",
                 paddingLeft: "40px",
